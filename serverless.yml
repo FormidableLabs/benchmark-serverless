@@ -20,7 +20,17 @@ provider:
 
 functions:
   base:
-    handler: src/base.handler
+    handler: index.handler
     events: # Use a generic proxy to allow Express app to route.
       - http: ANY /base
       - http: 'ANY /base/{proxy+}'
+
+  individual:
+    handler: index.handler
+    package:
+      individually: true
+    events: # Use a generic proxy to allow Express app to route.
+      - http: ANY /individual
+      - http: 'ANY /individual/{proxy+}'
+
+# TODO(JETPACK): Add layers
