@@ -1,14 +1,10 @@
-service: tracing-demo-serverless
+service: benchmark-serverless
 
 
 custom:
   region: ${opt:region, env:AWS_REGION, "us-east-1"}
   stage: ${opt:stage, env:STAGE, "localdev"}
-  # TODO(Jetpack): Document this option
-  jetpack:
-    custom: "custom config option" # TODO(Jetpack): REMOVE
 
-# TODO(jetpack): Add offline plugin
 plugins:
   modules:
     - serverless-jetpack
@@ -29,12 +25,3 @@ functions:
     events: # Use a generic proxy to allow Express app to route.
       - http: ANY /base
       - http: 'ANY /base/{proxy+}'
-    # TODO(Jetpack):Document this option
-    jetpack:
-      function: "function config option" # TODO(Jetpack): REMOVE
-
-# TODO(Jetpack): We're at ye olde "layers require AWS auth" problem.
-# https://github.com/serverless/serverless/issues/8187
-# layers:
-#   layer-express:
-#     path: node_modules/express
