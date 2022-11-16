@@ -6,8 +6,7 @@ custom:
   stage: ${opt:stage, env:STAGE, "localdev"}
 
 plugins:
-  modules:
-    - serverless-jetpack
+  modules: ${file(./serverless.js):modules}
 
 provider:
   name: aws

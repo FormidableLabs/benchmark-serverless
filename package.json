@@ -12,9 +12,12 @@
     "serverless-http": "^3.0.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "serverless": "^3.22.0"
   },
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "pkg:sls": "sls package",
+    "pkg:jetpack": "cross-env JETPACK=true sls package"
   }
 }
