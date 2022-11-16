@@ -1,0 +1,20 @@
+{
+  "name": "benchmark-serverless",
+  "version": "0.0.1",
+  "description": "Example Serverless Framework application",
+  "private": true,
+  "main": "index.js",
+  "repository": "https://github.com/FormidableLabs/benchmark-serverless",
+  "author": "Ryan Roemer <ryan.roemer@formidable.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "serverless-http": "^3.0.2"
+  },
+  "devDependencies": {
+    "serverless": "^3.22.0"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
